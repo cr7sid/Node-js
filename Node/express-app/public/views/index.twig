@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>{{ title }}</title>
+  </head>
+  <body>
+      <h1>{{ title }}</h1>
+      <p>{{ message }}</p>
+      <form method="post">
+        <input type="text" name="username" value="{{ user.username }}"/><br>
+        {% if (error.username) %}
+          <p>{{ error.username.msg }}<p><br>
+        {% endif %}
+        <input type="password" name="password"/><br>
+        {% if (error.password) %}
+          <p>{{ error.password.msg }}<p><br>
+        {% endif %}
+        <input type="password" name="cpassword"/><br>
+        {% if (error.cpassword) %}
+          <p>{{ error.cpassword.msg }}<p><br>
+        {% endif %}
+        <input type="submit" value="Submit"/><br>
+      </form>
+  </body>
+</html>
